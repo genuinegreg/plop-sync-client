@@ -17,6 +17,9 @@ angular.module('btsyncSaasClientApp')
 
                 _token = token;
                 $http.defaults.headers.common.Authorization = 'Basic ' + btoa(_token);
+            },
+            logedin: function() {
+                return !!_token;
             }
         };
     });

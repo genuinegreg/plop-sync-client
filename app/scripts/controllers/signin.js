@@ -3,6 +3,10 @@
 angular.module('btsyncSaasClientApp')
     .controller('SigninCtrl', function ($scope, User, Auth, $location) {
 
+        if (Auth.logedin()) {
+            return  $location.path('/account');
+        }
+
         $scope.clear = function () {
             // clear fields
             $scope.username = undefined;
@@ -29,6 +33,7 @@ angular.module('btsyncSaasClientApp')
             // try to login
             $scope.user = User.login({id: $scope.username, password: $scope.password},
                 function success(userPromise) {
+
                     // clear states
                     $scope.loging = false;
                     $scope.error = false;

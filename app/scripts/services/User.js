@@ -3,13 +3,13 @@
 angular.module('btsyncSaasClientApp')
     .factory('User', function ($resource) {
 
-        var baseurl = 'api/';
+        var baseUrl = 'api/';
 
         return $resource(
-            baseurl + 'users/:id', {},
+            baseUrl + 'users/:id', {},
             {
-                save: {method: 'POST', url: baseurl + 'users/:id/create/:password'},
-                login: {method: 'GET', url: baseurl + 'users/:id/login/:password'}
+                test: {method: 'POST', url: baseUrl + 'users/:id/create/:password'},
+                login: {method: 'GET', url: baseUrl + 'users/:id/login/:password'}
             });
 
 
