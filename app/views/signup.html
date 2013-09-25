@@ -1,0 +1,31 @@
+<div header></div>
+
+<div ng-show="error" class="alert alert-danger"> Oops, Incorrect username or password !</div>
+
+<form class="form-signin">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <input
+            type="text" class="form-control"
+            placeholder="Username"
+            autofocus
+            ng-model="username">
+    <input
+            type="password" class="form-control"
+            placeholder="Password"
+            ng-model="password">
+
+    <!--<label class="checkbox" class="disabled">-->
+    <!--<input class="disabled" type="checkbox" value="remember-me"> Remember me-->
+    <!--</label>-->
+    <button
+            class="btn btn-lg btn-primary btn-block" type="submit"
+            ng-click="login()"
+            ng-class="{disabled: loging}">
+        Sign in
+    </button>
+    <button
+            class="btn btn-lg btn-default btn-block" type="submit"
+            ng-click="clear()">
+        Clear
+    </button>
+</form>

@@ -1,6 +1,5 @@
 'use strict';
 
 angular.module('btsyncSaasClientApp')
-    .controller('MainCtrl', function ($scope) {
-
+    .controller('SignupCtrl', function ($scope) {
     });
