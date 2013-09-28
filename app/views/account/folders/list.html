@@ -1,0 +1,80 @@
+<div header="Shared Folders"></div>
+
+<ol class="breadcrumb">
+    <li><a href="#/">Home</a></li>
+    <li><a href="#/account">Account</a></li>
+    <li ng-show="folder"><a href="#/account/folders/list">Folders</a></li>
+    <li class="active" ng-show="folder">{{ folder.id }}</li>
+    <li class="active" ng-hide="folder">Folders</li>
+</ol>
+
+<div class="alert alert-warning" ng-hide="folders">
+    <h4>You have'nt created or connected any shared folder yet ! </h4>
+    Create or connect a <a href="#/account/folders/create">new folder</a> ?
+</div>
+
+
+<div class="list-group col-md-6">
+    <a ng-href="#/account/folders/list/{{ folder.id }}" class="list-group-item"
+       ng-repeat="folder in folders">
+        <h4 class="list-group-item-heading">{{ folder.name }} <span ng-hide="folder.name">Unamed folder</span></h4>
+        <span class="ellipsis"><strong>id : </strong>{{ folder.id}} </span>
+    </a>
+</div>
+
+<div class="col-md-6">
+    <div ng-show="folder" class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{ folder.name }} <span ng-hide="folder.name">Unamed folder</span></h3>
+        </div>
+        <div class="panel-body">
+
+            <form class="form-horizontal" role="form">
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">name : </label>
+
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" placeholder="Unamed folder..." ng-model="folder.name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">SECRET : </label>
+
+                    <div class="col-md-9">
+                        <input type="text" disabled class="form-control" ng-model="folder.secret">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Description : </label>
+
+                    <div class="col-md-9">
+                        <textarea rows="3" class="form-control" ng-model="folder.description"
+                                  placeholder="Description..."> </textarea>
+                    </div>
+                </div>
+
+                <button
+                        class="btn btn-lg btn-primary col-md-8" type="submit"
+                        ng-click="save()"
+                        ng-class="{disabled: loging}">
+                    <strong>Save</strong>
+                </button>
+
+                <button
+                        class="btn btn-lg btn-danger col-md-3 col-md-offset-1" type="submit"
+                        ng-click="delete()"
+                        ng-class="{disabled: loging}">
+                    Delete
+                </button>
+
+            </form>
+            <!--<input disabled type="text" ng-model="folder.secret"></input>-->
+            <!--{{ folder.secret }} <br/>-->
+            <!--description : {{ folder.description }} <br/>-->
+        </div>
+        <div class="panel-footer">Size : ?????, Items : ??</div>
+    </div>
+</div>

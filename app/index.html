@@ -17,6 +17,7 @@
 
 
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/signin.css">
@@ -54,17 +55,21 @@
     ga('send', 'pageview');
 </script>
 
-<script src="bower_components/jquery/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
+
 
 <!-- build:js scripts/libs.js -->
 <script src="bower_components/base64/base64.js"></script>
+<script src="bower_components/modernizr/modernizr.js"></script>
 <!-- build:js scripts/libs.js -->
 
 
 <!-- build:js scripts/modules.js -->
+<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/restangular/dist/restangular.js"></script>
+<script src="bower_components/lodash/dist/lodash.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
-<script src="bower_components/angular-resource/angular-resource.js"></script>
 <script src="bower_components/angular-cookies/angular-cookies.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <!-- endbuild -->
@@ -72,12 +77,13 @@
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/main.js"></script>
-<script src="scripts/services/Auth.js"></script>
-<script src="scripts/services/User.js"></script>
-<script src="scripts/services/Folder.js"></script>
+<script src="scripts/services/Api.js"></script>
 <script src="scripts/controllers/signin.js"></script>
 <script src="scripts/controllers/signup.js"></script>
 <script src="scripts/directives/header.js"></script>
+<script src="scripts/controllers/account/folders/list.js"></script>
+<script src="scripts/controllers/account/user.js"></script>
+<script src="scripts/controllers/account/folders/create.js"></script>
 <!-- endbuild -->
 </body>
 </html>

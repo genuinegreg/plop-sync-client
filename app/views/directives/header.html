@@ -1,0 +1,65 @@
+<header>
+    <div class="pull-right" style="vertical-align: middle">
+        <span ng-hide="user">
+            <a class="btn btn-success" href="#/signup">Sign Up</a>
+            <a class="btn btn-default" href="#/signin">Sign In</a>
+        </span>
+        <span ng-show="user">
+            Hi, <a href="#/account/user">{{ user }}</a>
+
+            <div class="btn-group">
+
+                <a class="btn btn-default"
+                   href="#/account/user"
+                   tooltip="Edit your profile" tooltip-placement="bottom" tooltip-append-to-body="true">
+
+
+                    <span class="icon-stack">
+                        <i class="icon-circle icon-stack-base"></i>
+                        <i class="icon-user icon-light "></i>
+                    </span>
+
+                    <!--<i class="icon-user"></i>-->
+                </a>
+
+                <a class="btn btn-default"
+                   href="#/account/folders/list"
+                   tooltip="Folders list" tooltip-placement="bottom" tooltip-append-to-body="true">
+
+                    <span class="icon-stack">
+                        <i class="icon-folder-close icon-stack-base"></i>
+                        <i class="icon-list icon-light"></i>
+                    </span>
+                    <!--<i class="icon-list"></i>-->
+
+                </a>
+
+                <a class="btn btn-default"
+                   href="#/account/folders/create"
+                   tooltip="New Folder" tooltip-placement="bottom" tooltip-append-to-body="true">
+
+                    <span class="icon-stack">
+                        <i class="icon-folder-close icon-stack-base"></i>
+                        <i class="icon-plus icon-light"></i>
+                    </span>
+
+                    <!--<i class="icon-folder-close"></i>-->
+                </a>
+
+                <button class="btn btn-default"
+                        ng-click="signout()"
+                        tooltip="Sign out" tooltip-placement="bottom" tooltip-append-to-body="true">
+                    <span class="icon-stack">
+                        <i class="icon-circle icon-stack-base"></i>
+                        <i class="icon-signout icon-light "></i>
+                    </span>
+                </button>
+
+            </div>
+        </span>
+    </div>
+    <h3 class="text-muted"><a href="#/" class="text-muted"><span class="glyphicon glyphicon-cloud-upload"></span>
+        Plop-sync</a>
+        <small ng-show="header"> / {{ header }}</small>
+    </h3>
+</header>

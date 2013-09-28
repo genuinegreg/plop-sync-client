@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('btsyncSaasClientApp', ['ngRoute', 'ngResource'])
+angular.module('btsyncSaasClientApp', ['ngRoute', 'ui.bootstrap', 'restangular'])
     .config(function ($routeProvider) {
 
         $routeProvider
@@ -15,6 +15,18 @@ angular.module('btsyncSaasClientApp', ['ngRoute', 'ngResource'])
             .when('/signup', {
                 templateUrl: 'views/signup.html',
                 controller: 'SignupCtrl'
+            })
+            .when('/account/folders/list/:folderId?', {
+                templateUrl: 'views/account/folders/list.html',
+                controller: 'AccountFoldersListCtrl'
+            })
+            .when('/account/folders/create', {
+                templateUrl: 'views/account/folders/create.html',
+                controller: 'AccountFoldersCreateCtrl'
+            })
+            .when('/account/user', {
+                templateUrl: 'views/account/user.html',
+                controller: 'AccountUserCtrl'
             })
             .otherwise({
                 redirectTo: '/'

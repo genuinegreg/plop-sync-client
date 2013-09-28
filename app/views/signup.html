@@ -1,6 +1,12 @@
-<div header></div>
+<div header="Sign up"></div>
 
-<div ng-show="error" class="alert alert-danger"> Oops, Username already taken</div>
+<div ng-show="error" class="alert alert-danger">
+    <h4>
+        <strong>Oops,</strong>
+        Username already taken.
+    </h4>
+    Do you want to <a href="#/signin">Sign In</a> ?
+</div>
 
 <form class="col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 form-signin">
     <h2 class="form-signin-heading">Join PlopSync <br/>
@@ -26,7 +32,7 @@
         Sign up
     </button>
     <button
-            class="btn btn-lg btn-default btn-block" type="submit"
+            class="btn btn-lg btn-default btn-block" type="reset"
             ng-click="clear()">
         Clear
     </button>
