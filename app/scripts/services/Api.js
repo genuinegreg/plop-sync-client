@@ -5,39 +5,32 @@ angular.module('btsyncSaasClientApp')
 
         Restangular.setBaseUrl('api/');
         Restangular.addElementTransformer('folders', function (element) {
-            element.createdTimer = createdTimer(element.created);
+            var now = new Date();
+            var created = new Date(element.created);
+
+            var days = now.getDaysBetween(created);
+            if (days > 0) {
+
+                element.createdTimer = days + ' days ago';
+                return element;
+            }
+
+            var hours = created.getHoursBetween(now);
+            if (hours > 0) {
+                element.createdTimer = hours + ' hours ago';
+                return element;
+            }
+
+
+            var minutes = created.getMinutesBetween(now);
+            if (minutes > 0) {
+                element.createdTimer = minutes + ' minutes ago';
+                return element;
+            }
+
+            element.createdTimer = 'just now';
             return element;
         });
-
-        function createdTimer(date) {
-            var now = new Date();
-
-            date = new Date(date);
-
-            var days = now.getDaysBetween(date);
-            if (days > 0) {
-                return {
-                    number: days,
-                    type: 'days'
-                };
-
-                return '' + days + ' days ago';
-            }
-
-            var hours = date.getHoursBetween(now);
-            if (hours > 0) {
-                return hours + ' hours ago';
-            }
-
-
-            var minutes = date.getMinutesBetween(now);
-            if (minutes > 0) {
-                return minutes + ' minutes ago';
-            }
-
-            return 'just now';
-
-        }
 
         var _token;
         var _id;

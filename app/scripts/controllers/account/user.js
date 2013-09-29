@@ -1,10 +1,24 @@
 'use strict';
 
 angular.module('btsyncSaasClientApp')
-    .controller('AccountUserCtrl', function ($scope) {
-        $scope.awesomeThings = [
-            'HTML5 Boilerplate',
-            'AngularJS',
-            'Karma'
-        ];
+    .controller('AccountUserCtrl', function ($scope, $location, Api) {
+
+        Api.base().get().then(function (user) {
+            $scope.user = user;
+        });
+
+        $scope.save = function () {
+
+            if ($scope.user.password && $scope.user.password !== $scope.user.passwordCheck) {
+                $scope.passwordCheck = true;
+            }
+
+            console.log('password : ', $scope.user.password);
+
+            $scope.user.put().then(function () {
+                $location.path('/account');
+            });
+        };
+
+
     });
