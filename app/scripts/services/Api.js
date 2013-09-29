@@ -4,6 +4,40 @@ angular.module('btsyncSaasClientApp')
     .service('Api', function Auth($http, Restangular) {
 
         Restangular.setBaseUrl('api/');
+        Restangular.addElementTransformer('folders', function (element) {
+            element.createdTimer = createdTimer(element.created);
+            return element;
+        });
+
+        function createdTimer(date) {
+            var now = new Date();
+
+            date = new Date(date);
+
+            var days = now.getDaysBetween(date);
+            if (days > 0) {
+                return {
+                    number: days,
+                    type: 'days'
+                };
+
+                return '' + days + ' days ago';
+            }
+
+            var hours = date.getHoursBetween(now);
+            if (hours > 0) {
+                return hours + ' hours ago';
+            }
+
+
+            var minutes = date.getMinutesBetween(now);
+            if (minutes > 0) {
+                return minutes + ' minutes ago';
+            }
+
+            return 'just now';
+
+        }
 
         var _token;
         var _id;

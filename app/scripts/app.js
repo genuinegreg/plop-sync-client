@@ -16,9 +16,13 @@ angular.module('btsyncSaasClientApp', ['ngRoute', 'ui.bootstrap', 'restangular']
                 templateUrl: 'views/signup.html',
                 controller: 'SignupCtrl'
             })
-            .when('/account/folders/list/:folderId?', {
+            .when('/account/folders/list', {
                 templateUrl: 'views/account/folders/list.html',
                 controller: 'AccountFoldersListCtrl'
+            })
+            .when('/account/folders/details/:folderId', {
+                templateUrl: 'views/account/folders/details.html',
+                controller: 'AccountFoldersDetailsCtrl'
             })
             .when('/account/folders/create', {
                 templateUrl: 'views/account/folders/create.html',

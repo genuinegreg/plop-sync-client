@@ -8,7 +8,7 @@ angular.module('btsyncSaasClientApp')
 
                 console.log(folder);
 
-                $location.path('/account/folders/list/' + folder.id);
+                $location.path('/account/folders/details/' + folder.id);
             }
 
             function errorAction(err) {

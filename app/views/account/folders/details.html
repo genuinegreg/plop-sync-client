@@ -1,0 +1,108 @@
+<div header="Shared Folder / Details"></div>
+
+<ol class="breadcrumb">
+    <li><a href="#/">Home</a></li>
+    <li><a href="#/account">Account</a></li>
+    <li><a href="#/account/folders/list">Folders</a></li>
+    <li class="active">{{ folder.id }}</li>
+</ol>
+
+<!--<div class="alert alert-warning" ng-hide="folders">-->
+<!--<h4>You have'nt created or connected any shared folder yet ! </h4>-->
+<!--Create or connect a <a href="#/account/folders/create">new folder</a> ?-->
+<!--</div>-->
+
+
+<div class="col-md-3">
+    <a class="btn btn-primary btn-lg btn-block" href="#/account/folders/list"><i class="icon-arrow-left"></i> Go
+        back</a>
+    <a class="btn btn-success btn-lg btn-block" href="#/account/folders/create"><i class="icon-plus"></i> Create folder</a>
+</div>
+
+<!--<div class="list-group col-md-9">-->
+<!--<a ng-href="#/account/folders/list/{{ folder.id}}" class="list-group-item"-->
+<!--ng-repeat="folder in folders">-->
+
+
+<!--<h4 class="list-group-item-heading">-->
+<!--<i class="icon-folder-open-alt"></i> {{ folder.name }}-->
+<!--<span ng-hide="folder.name">Unamed folder</span>-->
+<!--<small class="ellipsis">{{ folder.description }}</small>-->
+<!--</h4>-->
+
+<!--<button class="btn btn-danger btn-xs"> delete</button>-->
+<!--<button class="btn btn-info btn-xs"> edit</button>-->
+
+<!--<small class="pull-right text-muted">-->
+<!--<strong><i class="icon-exchange"></i></strong> <abbr tooltip="Plop !!!" title> 12kbs/12kbs </abbr>-->
+<!--<i class="icon-ellipsis-vertical spacer"></i>-->
+<!--<strong><i class="icon-time"></i></strong> <abbr tooltip="{{ date | date:short }}" title> {{ dateFrom-->
+<!--}}</abbr>-->
+<!--<i class="icon-ellipsis-vertical spacer"></i>-->
+<!--<strong>#</strong>{{ folder.id}}-->
+<!--</small>-->
+<!--<div class="clearfix"></div>-->
+
+<!--</a>-->
+<!--</div>-->
+
+<div class="col-md-9">
+    <div ng-show="folder" class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><i class="icon-folder-open-alt icon-large"></i> <span folder-name></span></h3>
+        </div>
+        <div class="panel-body">
+
+            <form class="form-horizontal" role="form">
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Name : </label>
+
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" placeholder="Unamed folder..." ng-model="folder.name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Secret : </label>
+
+                    <div class="col-md-9">
+                        <input type="text" disabled class="form-control" ng-model="folder.secret">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Description : </label>
+
+                    <div class="col-md-9">
+                        <textarea rows="3" class="form-control" ng-model="folder.description"
+                                  placeholder="Description..."> </textarea>
+                    </div>
+                </div>
+
+                <div class="col-md-9 col-md-offset-3">
+                    <span class="col-md-8">
+                    <button
+                            class="btn btn-lg btn-primary btn-block" type="submit"
+                            ng-click="save()"
+                            ng-class="{disabled: loging}">
+                        Save
+                    </button>
+                        </span>
+                               <span class="col-md-4">
+                    <button
+                            class="btn btn-lg btn-danger btn-block" type="submit"
+                            ng-click="delete()"
+                            ng-class="{disabled: loging}">
+                        Delete
+                    </button>
+                                   </span>
+                </div>
+
+        </div>
+        <div class="panel-footer">
+            <small class="pull-right text-muted" folder-metadata="folder"></small>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
