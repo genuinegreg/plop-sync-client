@@ -32,6 +32,16 @@ angular.module('btsyncSaasClientApp')
             return element;
         });
 
+        Restangular.addElementTransformer('users', function (element) {
+            if (element.firstName || element.lastName) {
+                element.displayName = (element.firstName + ' ' + element.lastName).trim();
+            }
+            else {
+                element.displayName = element.id;
+            }
+            return element;
+        });
+
         var _token;
         var _id;
 
