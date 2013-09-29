@@ -12,9 +12,9 @@ describe('Directive: folderName', function () {
     scope = $rootScope.$new();
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<folder-name></folder-name>');
-    element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the folderName directive');
-  }));
+//  it('should make hidden element visible', inject(function ($compile) {
+//    element = angular.element('<folder-name></folder-name>');
+//    element = $compile(element)(scope);
+//    expect(element.text()).toBe('this is the folderName directive');
+//  }));
 });

@@ -3,7 +3,7 @@
 angular.module('btsyncSaasClientApp')
     .service('Api', function Auth($http, Restangular) {
 
-        Restangular.setBaseUrl('api/');
+        Restangular.setBaseUrl('');
         Restangular.addElementTransformer('folders', function (element) {
             var now = new Date();
             var created = new Date(element.created);

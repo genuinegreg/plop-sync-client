@@ -12,9 +12,9 @@ describe('Directive: folderMetadata', function () {
     scope = $rootScope.$new();
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<folder-metadata></folder-metadata>');
-    element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the folderMetadata directive');
-  }));
+//  it('should make hidden element visible', inject(function ($compile) {
+//    element = angular.element('<folder-metadata></folder-metadata>');
+//    element = $compile(element)(scope);
+//    expect(element.text()).toBe('this is the folderMetadata directive');
+//  }));
 });
