@@ -39,8 +39,8 @@ module.exports = function (grunt) {
                 tasks: ['coffee:test']
             },
             styles: {
-                files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-                tasks: ['copy:styles', 'autoprefixer']
+                files: ['<%= yeoman.app %>/styles/{,*/}*.css', '<%= yeoman.app %>/styles/{,*/}*.less'],
+                tasks: ['less:server', 'copy:styles', 'autoprefixer']
             },
             livereload: {
                 options: {
@@ -159,6 +159,18 @@ module.exports = function (grunt) {
                         ext: '.js'
                     }
                 ]
+            }
+        },
+        less: {
+            dist: {
+                files: {
+                    '<%= yeoman.dist %>/styles/main.css': ['app/styles/*.less']
+                }
+            },
+            server: {
+                files: {
+                    '.tmp/styles/main.css': ['app/styles/*.less']
+                }
             }
         },
         // not used since Uglify task does concat,
@@ -292,6 +304,7 @@ module.exports = function (grunt) {
         concurrent: {
             server: [
                 'coffee:dist',
+                'less:server',
                 'copy:styles'
             ],
             test: [
@@ -300,6 +313,7 @@ module.exports = function (grunt) {
             ],
             dist: [
                 'coffee',
+                'less:dist',
                 'copy:styles',
                 'imagemin',
                 'svgmin',
