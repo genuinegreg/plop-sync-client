@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('btsyncSaasClientApp')
+angular.module('plopSyncClientApp')
     .controller('AccountUserCtrl', function ($scope, $location, Api) {
 
         Api.base().get().then(function (user) {

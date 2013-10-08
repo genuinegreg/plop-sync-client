@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('btsyncSaasClientApp', ['ngRoute', 'ui.bootstrap', 'restangular'])
+angular.module('plopSyncClientApp', ['ngRoute', 'ui.bootstrap', 'restangular'])
     .config(function ($routeProvider) {
 
         $routeProvider

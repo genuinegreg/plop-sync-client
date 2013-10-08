@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('btsyncSaasClientApp')
+angular.module('plopSyncClientApp')
     .controller('AccountFoldersListCtrl', function ($scope, $routeParams, $location, Api) {
         if (!Api.isSignin()) {
             return  $location.path('/signin');

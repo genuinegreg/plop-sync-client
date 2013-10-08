@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('btsyncSaasClientApp')
+angular.module('plopSyncClientApp')
     .controller('SignupCtrl', function ($scope, Api, $location) {
 
         if (Api.isSignin()) {

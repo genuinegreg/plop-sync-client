@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('btsyncSaasClientApp')
+angular.module('plopSyncClientApp')
     .controller('MainCtrl', function ($location, Api) {
         if (Api.isSignin()) {
             $location.path('/account');

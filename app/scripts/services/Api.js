@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('btsyncSaasClientApp')
+angular.module('plopSyncClientApp')
     .service('Api', function Auth($http, Restangular) {
 
         Restangular.setBaseUrl('./api/v1');

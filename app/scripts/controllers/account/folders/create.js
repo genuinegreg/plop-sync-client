@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('btsyncSaasClientApp')
+angular.module('plopSyncClientApp')
     .controller('AccountFoldersCreateCtrl', function ($scope, $location, Api) {
         $scope.createFolder = function () {
 

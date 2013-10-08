@@ -3,7 +3,7 @@
 describe('Directive: folderMetadata', function () {
 
   // load the directive's module
-  beforeEach(module('btsyncSaasClientApp'));
+  beforeEach(module('plopSyncClientApp'));
 
   var element,
     scope;

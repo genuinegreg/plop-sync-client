@@ -3,7 +3,7 @@
 describe('Controller: SigninCtrl', function () {
 
     // load the controller's module
-    beforeEach(module('btsyncSaasClientApp'));
+    beforeEach(module('plopSyncClientApp'));
 
     var SigninCtrl,
         scope;

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('btsyncSaasClientApp')
+angular.module('plopSyncClientApp')
     .directive('header', function (Api) {
         return {
             templateUrl: 'views/directives/header.html',

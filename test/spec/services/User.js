@@ -3,7 +3,7 @@
 describe('Service: User', function () {
 
 //  // load the service's module
-//  beforeEach(module('btsyncSaasClientApp'));
+//  beforeEach(module('plopSyncClientApp'));
 //
 //  // instantiate service
 //  var User;

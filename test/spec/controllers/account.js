@@ -3,7 +3,7 @@
 describe('Controller: AccountCtrl', function () {
 
     // load the controller's module
-    beforeEach(module('btsyncSaasClientApp'));
+    beforeEach(module('plopSyncClientApp'));
 
     var AccountCtrl,
         scope;
