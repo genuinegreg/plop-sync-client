@@ -162,14 +162,9 @@ module.exports = function (grunt) {
             }
         },
         less: {
-            dist: {
-                files: {
-                    '<%= yeoman.dist %>/styles/main.css': ['app/styles/*.less']
-                }
-            },
             server: {
                 files: {
-                    '.tmp/styles/main.css': ['app/styles/*.less']
+                    '.tmp/styles/main.css': ['app/styles/main.less']
                 }
             }
         },
@@ -313,7 +308,7 @@ module.exports = function (grunt) {
             ],
             dist: [
                 'coffee',
-                'less:dist',
+                'less:server',
                 'copy:styles',
                 'imagemin',
                 'svgmin',
