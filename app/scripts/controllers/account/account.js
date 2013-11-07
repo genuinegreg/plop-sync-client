@@ -1,12 +1,9 @@
 'use strict';
 
 angular.module('plopSyncClientApp')
-    .controller('AccountCtrl', function ($scope, Api) {
-        Api.base().get().then(function (user) {
-            $scope.user = user;
-        });
+    .controller('AccountCtrl', function ($scope, user, folders) {
 
-        Api.base().getList('folders').then(function (folders) {
-            $scope.folders = folders;
-        });
+        $scope.user = user;
+        $scope.folders = folders;
+
     });

@@ -7,6 +7,7 @@ angular.module('plopSyncClientApp')
             scope: {},
             replace: true,
             controller: function ($scope, Api, $location) {
+
                 $scope.signout = function () {
                     Api.signout();
                     $location.path('/');
@@ -16,6 +17,10 @@ angular.module('plopSyncClientApp')
             link: function postLink(scope, element, attrs) {
                 if (Api.isSignin()) {
                     scope.user = Api.id();
+                    scope.homeLink = '#/account';
+                }
+                else {
+                    scope.homeLink = '#/';
                 }
 
                 scope.header = attrs.header;
