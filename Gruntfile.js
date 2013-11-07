@@ -272,6 +272,7 @@ module.exports = function (grunt) {
                             '.htaccess',
                             'bower_components/bootstrap/dist/**/*',
                             'bower_components/angular/angular.min.js',
+                            'bower_components/angular/angular.min.js.map',
                             'bower_components/es5-shim/es5-shim.min.js',
                             'bower_components/json3/lib/json3.min.js',
 //                            'bower_components/**/*',
