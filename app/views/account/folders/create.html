@@ -1,50 +1,54 @@
 <div header="Shared Folders / Create or connect"></div>
 
-<ol class="breadcrumb">
-    <li><a href="#/">Home</a></li>
-    <li><a href="#/account">Account</a></li>
-    <li><a href="#/account/folders/list">Folders</a></li>
-    <li class="active">Create</li>
-</ol>
+
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a href="#/account">Home</a></li>
+        <li><a href="#/account">Account</a></li>
+        <li><a href="#/account/folders/list">Folders</a></li>
+        <li class="active">Create</li>
+    </ol>
 
 
-<div ng-show="error" class="alert alert-danger">
-    <h4>
-        <strong>Oops,</strong>
-        Something went wrong, please try again in a few minutes !
-    </h4>
-    Go back to your <a href="#/account/folders/list">folders list</a> ?
-</div>
+    <div ng-show="error" class="alert alert-danger">
+        <h4>
+            <strong>Oops,</strong>
+            Something went wrong, please try again in a few minutes !
+        </h4>
+        Go back to your <a href="#/account/folders/list">folders list</a> ?
+    </div>
 
 
-<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">Create or connect a shared folder</h3>
-        </div>
-        <div class="panel-body">
-            <form role="form">
-                <div class="checkbox">
-                    <label>
-                        <input ng-model="generate" type="checkbox"> Random SECRET
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label>BitTorrent Sync secret</label>
-                    <input type="text" class="form-control"
-                           placeholder="Enter your BitTorrent Sync SECRET"
-                           ng-model="secret"
-                           ng-hide="generate">
-                    <input type="text" class="form-control"
-                           placeholder="SECRET is randomly generated"
-                           ng-show="generate"
-                           disabled>
-                </div>
-                <button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="createFolder()">
-                    <span ng-hide="generate"> Connect folder with a SECRET <i class="icon-key"></i> </span>
-                    <span ng-show="generate"> Create folder with a random SECRET <i class="icon-random"></i> </span>
-                </button>
-            </form>
+    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Create or connect a shared folder</h3>
+            </div>
+            <div class="panel-body">
+                <form role="form">
+                    <div class="checkbox">
+                        <label>
+                            <input ng-model="generate" type="checkbox"> Random SECRET
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>BitTorrent Sync secret</label>
+                        <input type="text" class="form-control"
+                               placeholder="Enter your BitTorrent Sync SECRET"
+                               ng-model="secret"
+                               ng-hide="generate">
+                        <input type="text" class="form-control"
+                               placeholder="SECRET is randomly generated"
+                               ng-show="generate"
+                               disabled>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" ng-click="createFolder()">
+                        <span ng-hide="generate"> Connect folder with a SECRET <i class="icon-key"></i> </span>
+                        <span ng-show="generate"> Create folder with a random SECRET <i class="icon-random"></i> </span>
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
+
 </div>

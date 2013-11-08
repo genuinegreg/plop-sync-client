@@ -1,43 +1,49 @@
 <div header="Shared Folders"></div>
 
-<ol class="breadcrumb">
-    <li><a href="#/">Home</a></li>
-    <li><a href="#/account">Account</a></li>
-    <li class="active">Folders</li>
-</ol>
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a href="#/account">Home</a></li>
+        <li><a href="#/account">Account</a></li>
+        <li class="active">Folders</li>
+    </ol>
 
-<div class="col-md-3">
-    <a class="btn btn-primary btn-lg btn-block" href="#/account"><i class="icon-arrow-left"></i> Go back</a>
-    <a class="btn btn-success btn-lg btn-block" href="#/account/folders/create"><i class="icon-plus"></i> Create folder</a>
+    <div class="row">
+        <div class="col-sm-3">
+            <a class="btn btn-primary btn-lg btn-block" href="#/account"><i class="icon-arrow-left"></i> Go back</a>
+            <a class="btn btn-success btn-lg btn-block" href="#/account/folders/create"><i class="icon-plus"></i> Create folder</a>
+            <br class="visible-xs"/>
+        </div>
 
-</div>
+        <div class="col-sm-9">
+            <div class="list-group">
 
-<div class="list-group col-md-9">
+                <div class="alert alert-warning" ng-hide="folders">
+                    <h4>You have'nt created or connected any shared folder yet ! </h4>
+                    Create or connect a <a href="#/account/folders/create">new folder</a> ?
+                </div>
 
-    <div class="alert alert-warning" ng-hide="folders">
-        <h4>You have'nt created or connected any shared folder yet ! </h4>
-        Create or connect a <a href="#/account/folders/create">new folder</a> ?
+                <a ng-href="#/account/folders/details/{{ folder.id}}" class="list-group-item"
+                   ng-repeat="folder in folders | orderBy:'created':true">
+
+
+                    <h4 class="list-group-item-heading">
+                        <i class="icon-folder-open-alt"></i>
+                        <span folder-name></span>
+                        <small class="ellipsis">{{ folder.description }}</small>
+                    </h4>
+
+
+                    <button ng-href="#/account/folders/delete/{{ folder.id}}" ng-click="console.log('plop')"
+                            class="btn btn-danger btn-xs"> Delete
+                    </button>
+                    <button ng-href="#/account/folders/details/{{ folder.id}}" class="btn btn-info btn-xs"> Edit</button>
+
+                    <small class="pull-right text-muted" folder-metadata="folder"></small>
+
+                    <div class="clearfix"></div>
+
+                </a>
+            </div>
+        </div>
     </div>
-
-    <a ng-href="#/account/folders/details/{{ folder.id}}" class="list-group-item"
-       ng-repeat="folder in folders | orderBy:'created':true">
-
-
-        <h4 class="list-group-item-heading">
-            <i class="icon-folder-open-alt"></i>
-            <span folder-name></span>
-            <small class="ellipsis">{{ folder.description }}</small>
-        </h4>
-
-
-        <button ng-href="#/account/folders/delete/{{ folder.id}}" ng-click="console.log('plop')"
-                class="btn btn-danger btn-xs"> Delete
-        </button>
-        <button ng-href="#/account/folders/details/{{ folder.id}}" class="btn btn-info btn-xs"> Edit</button>
-
-        <small class="pull-right text-muted" folder-metadata="folder"></small>
-
-        <div class="clearfix"></div>
-
-    </a>
 </div>
