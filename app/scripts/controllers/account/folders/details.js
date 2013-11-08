@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('plopSyncClientApp')
-    .controller('AccountFoldersDetailsCtrl', function ($scope, $route, $routeParams, $location, Api, folder) {
+    .controller('AccountFoldersDetailsCtrl', function ($scope, $rootScope, $route, $routeParams, $location, Api, folder) {
         if (!Api.isSignin()) {
             return  $location.path('/signin');
         }
@@ -14,6 +14,8 @@ angular.module('plopSyncClientApp')
 
         $scope.delete = function () {
 
+            $rootScope.$emit('$plopRequestStart');
+
             folderApi.remove().then(function (folder) {
                 $location.path('/account/folders/list');
             });
@@ -21,6 +23,8 @@ angular.module('plopSyncClientApp')
         };
 
         $scope.save = function () {
+
+            $rootScope.$emit('$plopRequestStart');
 
             $scope.folder.put().then(
                 function () {
