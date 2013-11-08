@@ -1,79 +1,89 @@
 <div header="Shared Folder / Details"></div>
 
-<ol class="breadcrumb">
-    <li><a href="#/">Home</a></li>
-    <li><a href="#/account">Account</a></li>
-    <li><a href="#/account/folders/list">Folders</a></li>
-    <li class="active">{{ folder.id }}</li>
-</ol>
 
-<div class="col-md-3">
-    <a class="btn btn-primary btn-lg btn-block" href="#/account/folders/list">
-        <i class="icon-arrow-left"></i> Go back
-    </a>
-    <a class="btn btn-success btn-lg btn-block" href="#/account/folders/create">
-        <i class="icon-plus"></i> Create folder
-    </a>
-</div>
+<div class="container">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#/account">Home</a></li>
+            <li><a href="#/account">Account</a></li>
+            <li><a href="#/account/folders/list">Folders</a></li>
+            <li class="active">{{ folder.id }}</li>
+        </ol>
+    </div>
 
-<div class="col-md-9">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title"><i class="icon-folder-open-alt icon-large"></i> <span folder-name></span></h3>
+    <div class="row">
+
+        <div class="col-sm-3">
+            <a class="btn btn-primary btn-lg btn-block" href="#/account/folders/list">
+                <i class="icon-arrow-left"></i> Go back
+            </a>
+            <a class="btn btn-success btn-lg btn-block" href="#/account/folders/create">
+                <i class="icon-plus"></i> Create folder
+            </a>
+            <br/>
         </div>
-        <div class="panel-body">
-
-            <form class="form-horizontal" role="form">
-
-                <div class="form-group">
-                    <label class="col-md-3 control-label">Name : </label>
-
-                    <div class="col-md-9">
-                        <input type="text" class="form-control" placeholder="Unamed folder..." ng-model="folder.name">
-                    </div>
+        <div class="col-sm-9">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="icon-folder-open-alt icon-large"></i> <span folder-name></span></h3>
                 </div>
+                <div class="panel-body">
 
-                <div class="form-group">
-                    <label class="col-md-3 control-label">Secret : </label>
+                    <form class="form-horizontal" role="form">
 
-                    <div class="col-md-9">
-                        <input type="text" disabled class="form-control" ng-model="folder.secret">
-                    </div>
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Name : </label>
+
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" placeholder="Unamed folder..." ng-model="folder.name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Secret : </label>
+
+                            <div class="col-md-9">
+                                <input type="text" disabled class="form-control" ng-model="folder.secret">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">Description : </label>
+
+                            <div class="col-md-9">
+                                <textarea rows="3" class="form-control" ng-model="folder.description"
+                                          placeholder="Description..."> </textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-9 col-md-offset-3">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <button
+                                            class="btn btn-lg btn-primary btn-block" type="submit"
+                                            ng-click="save()"
+                                            ng-class="{disabled: loging}">
+                                        Save
+                                    </button>
+                                </div>
+                                <div class="col-sm-4">
+                                    <button
+                                            class="btn btn-lg btn-danger btn-block" type="submit"
+                                            ng-click="delete()"
+                                            ng-class="{disabled: loging}">
+                                        Delete
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
                 </div>
-
-                <div class="form-group">
-                    <label class="col-md-3 control-label">Description : </label>
-
-                    <div class="col-md-9">
-                        <textarea rows="3" class="form-control" ng-model="folder.description"
-                                  placeholder="Description..."> </textarea>
-                    </div>
+                <div class="panel-footer">
+                    <small class="pull-right text-muted" folder-metadata="folder"></small>
+                    <div class="clearfix"></div>
                 </div>
-
-                <div class="col-md-9 col-md-offset-3">
-                    <span class="col-md-8">
-                        <button
-                                class="btn btn-lg btn-primary btn-block" type="submit"
-                                ng-click="save()"
-                                ng-class="{disabled: loging}">
-                            Save
-                        </button>
-                    </span>
-                    <span class="col-md-4">
-                        <button
-                                class="btn btn-lg btn-danger btn-block" type="submit"
-                                ng-click="delete()"
-                                ng-class="{disabled: loging}">
-                            Delete
-                        </button>
-                    </span>
-                </div>
-            </form>
-
-        </div>
-        <div class="panel-footer">
-            <small class="pull-right text-muted" folder-metadata="folder"></small>
-            <div class="clearfix"></div>
+            </div>
         </div>
     </div>
 </div>
