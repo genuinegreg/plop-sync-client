@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('plopSyncClientApp')
-    .controller('SigninCtrl', function ($scope, Api, $location) {
+    .controller('SigninCtrl', function ($scope, $rootScope, Api, $location) {
 
         if (Api.isSignin()) {
             return  $location.path('/account/folders/list');
@@ -15,6 +15,7 @@ angular.module('plopSyncClientApp')
 
         $scope.login = function () {
 
+            $rootScope.$emit('$plopRequestStart');
 
             // check username and password fields
             if (!$scope.username || !$scope.password) {
@@ -38,6 +39,7 @@ angular.module('plopSyncClientApp')
                 },
                 function error() {
                     // display error and clean things
+                    $rootScope.$emit('$plopRequestFail');
                     $scope.error = true;
                     $scope.loging = false;
                     $scope.password = undefined;
