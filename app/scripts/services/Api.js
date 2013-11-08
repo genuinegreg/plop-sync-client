@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('plopSyncClientApp')
-    .service('Api', function Auth($http, Restangular) {
+    .service('Api', function ApiService($http, Restangular) {
 
         Restangular.setBaseUrl('./api/v1');
         Restangular.addElementTransformer('folders', function (element) {

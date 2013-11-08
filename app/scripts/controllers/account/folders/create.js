@@ -1,18 +1,17 @@
 'use strict';
 
 angular.module('plopSyncClientApp')
-    .controller('AccountFoldersCreateCtrl', function ($scope, $location, Api) {
+    .controller('AccountFoldersCreateCtrl', function ($scope, $rootScope, $location, Api) {
         $scope.createFolder = function () {
 
+            $rootScope.$emit('$plopRequestStart');
+
             function successAction(folder) {
-
-                console.log(folder);
-
                 $location.path('/account/folders/details/' + folder.id);
             }
 
             function errorAction(err) {
-                console.log('error');
+                $rootScope.$emit('$plopRequestFail');
                 $scope.error = true;
             }
 
