@@ -20,6 +20,7 @@ angular.module('plopSyncClientApp')
                     scope.homeLink = '#/account';
                 }
                 else {
+                    scope.user = false;
                     scope.homeLink = '#/';
                 }
 
