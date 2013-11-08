@@ -11,7 +11,6 @@ angular.module('plopSyncClientApp')
                     if (!$scope.folder) {
                         return;
                     }
-                    console.log($scope.folder);
                     $scope.folderSize = humanFileSize($scope.folder.size);
                     $scope.netSend = humanNetSpeed($scope.folder.dstat['net/total'].send);
                     $scope.netRecv = humanNetSpeed($scope.folder.dstat['net/total'].recv);
