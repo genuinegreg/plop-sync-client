@@ -15,14 +15,14 @@ angular.module('plopSyncClientApp')
 
         $scope.signUp = function () {
 
-            $rootScope.$emit('$plopRequestStart');
-
             // check username and password fields
             if (!$scope.username || !$scope.password) {
                 $scope.error = true;
                 $scope.loging = false;
                 return;
             }
+
+            $rootScope.$emit('$plopRequestStart');
 
             // set loging state
             $scope.loging = true;
