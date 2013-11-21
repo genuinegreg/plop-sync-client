@@ -3,7 +3,6 @@
 angular.module('plopSyncClientApp')
     .directive('routeChange', function (Api) {
         return {
-            scope: {},
             controller: function ($rootScope, $scope) {
                 $rootScope.$on('$routeChangeStart', function changingRoute(event, current, previous) {
                     $scope.loading = true;

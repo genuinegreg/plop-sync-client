@@ -1,6 +1,6 @@
 {
   "name": "plop-sync-client",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
