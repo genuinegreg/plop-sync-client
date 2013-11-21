@@ -1,6 +1,6 @@
 {
   "name": "plop-sync-client",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "dependencies": {
     "angular": "~1.2.0",
     "json3": "~3.2.4",
