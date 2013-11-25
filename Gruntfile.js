@@ -169,6 +169,25 @@ module.exports = function (grunt) {
                 }
             }
         },
+        ngTemplate: {
+
+            // The directory of your views
+            files : ['dist/views/main.html', 'dist/views/directives/header.html'],
+
+            options: {
+
+                // The directory of your app
+                appDir : 'dist',
+
+                // The main html file to place your inline templates
+                indexFile : 'index.html',
+
+                // Default set to false
+                concat : true
+
+            }
+
+        },
         // not used since Uglify task does concat,
         // but still available if needed
         /*concat: {
@@ -351,6 +370,8 @@ module.exports = function (grunt) {
         }
     });
 
+    grunt.renameTask('ng_template', 'ngTemplate');
+
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
             return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
@@ -386,7 +407,8 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'rev',
-        'usemin'
+        'usemin',
+        'ngTemplate'
     ]);
 
     grunt.registerTask('default', [
